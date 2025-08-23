@@ -1,0 +1,21 @@
+ .full-page {
+     min-height: 100vh;
+     background: linear-gradient(to right, #ffe6f0, #ffccdc);
+     /* shaded pink */
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     padding: 20px;
+     /* prevents overflow on small screens */
+ }
+
+ .card {
+     width: 100%;
+     max-width: 500px;
+     padding: 20px;
+     border-radius: 10px;
+ }
+
+ .card-title {
+     font-weight: bold;
+ }
