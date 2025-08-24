@@ -1,18 +1,29 @@
 <div class="full-page">
     <div class="card shadow bg-white">
-        <h4 class="card-title text-center mb-4">Book Your Bus Ticket</h4>
+        <h4 class="card-title text-center mb-4"> <i class="fa fa-bus"></i> Book Your Bus Ticket</h4>
         <form>
-            <div class="mb-3">
-                <label for="from" class="form-label">From</label>
-                <input type="text" class="form-control" id="from" placeholder="Enter source city">
-            </div>
-            <div class="mb-3">
-                <label for="to" class="form-label">To</label>
-                <input type="text" class="form-control" id="to" placeholder="Enter destination city">
+            <div class="row mb-3">
+                <div class="col-md-6 mb-3 mb-md-0">
+                    <label for="from" class="form-label">From</label>
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="fa fa-map-marker"></i></span>
+                        <input type="text" class="form-control" id="from" placeholder="Enter source city">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label for="to" class="form-label">To</label>
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="fa fa-map-marker"></i></span>
+                        <input type="text" class="form-control" id="to" placeholder="Enter destination city">
+                    </div>
+                </div>
             </div>
             <div class="mb-3">
                 <label for="date" class="form-label">Date of Journey</label>
-                <input type="date" class="form-control" id="date">
+                <div class="input-group">
+                    <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+                    <input type="date" class="form-control" id="date">
+                </div>
             </div>
             <div class="d-grid">
                 <button type="submit" class="btn btn-primary">
