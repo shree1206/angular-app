@@ -1,21 +1,28 @@
- .full-page {
-     min-height: 100vh;
-     background: linear-gradient(to right, #ffe6f0, #ffccdc);
-     /* shaded pink */
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     padding: 20px;
-     /* prevents overflow on small screens */
- }
+.full-page {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to right, #ffe6f0, #ffccdc);
+    /* shaded pink */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    z-index: 0;
+    overflow: hidden;
+}
 
- .card {
-     width: 100%;
-     max-width: 500px;
-     padding: 20px;
-     border-radius: 10px;
- }
+.card {
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+    border-radius: 10px;
+    max-height: 90vh;
+    overflow-y: auto;
+}
 
- .card-title {
-     font-weight: bold;
- }
+.card-title {
+    font-weight: bold;
+}
