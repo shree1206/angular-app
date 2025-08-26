@@ -1,1 +1,37 @@
-<p>search-result works!</p>
+<div class="container">
+    <div class="header">
+        <h2><i class="fa fa-bus"></i> Available Buses</h2>
+        <div class="button-group">
+            <button><i class="fa fa-filter"></i> Filter</button>
+            <button><i class="fa fa-sort"></i> Sort</button>
+        </div>
+    </div>
+    @for (item of searchData; track $index){
+    <!-- Bus Card 1 -->
+    <div class="bus-card">
+        <div class="bus-title">{{item.busName}}</div>
+        <div class="bus-info">
+            <div class="info-section">
+                <div class="info-title"><i class="fa fa-bed"></i> AC Sleeper</div>
+            </div>
+            <div class="info-section">
+                <div class="info-title">Departure</div>
+                <div class="info-value"><i class="fa fa-time"></i> {{item.departureTime | date : 'hh:mm:ss'}}</div>
+            </div>
+            <div class="info-section">
+                <div class="info-title">Duration</div>
+                <div class="info-value"><i class="fa fa-clock"></i> 8h 30m</div>
+            </div>
+            <div class="info-section">
+                <div class="info-title">Arrival</div>
+                <div class="info-value"><i class="fa fa-clock"></i> {{item.arrivalTime | date : 'hh:mm:ss'}}</div>
+            </div>
+            <div class="info-section">
+                <div class="info-title">Price</div>
+                <div class="info-value">{{item.price}}</div>
+            </div>
+            <button class="arrow-button"><i class="fa fa-arrow-right"></i></button>
+        </div>
+    </div>
+    }
+</div>
