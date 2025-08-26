@@ -4,10 +4,11 @@ import { ISearchBus, searchBus } from '../../models/model';
 import { SearchBusService } from '../../services/search-bus.service';
 import { DatePipe } from '@angular/common';
 import { EncryptionService } from '../../services/encryption.service';
+import { LoaderComponent } from '../../shared/loader/loader.component';
 
 @Component({
   selector: 'app-search-result',
-  imports: [DatePipe, RouterLink],
+  imports: [DatePipe, RouterLink, LoaderComponent],
   templateUrl: './search-result.component.html',
   styleUrl: './search-result.component.css'
 })
@@ -29,9 +30,14 @@ export class SearchResultComponent {
     })
   }
 
+  isLoading: boolean = true;
+
   getSearchResult() {
     this.searchService.searchBus(this.searchObj.fromLocationID, this.searchObj.toLocationID, this.searchObj.date).subscribe((res: any) => {
-      this.searchData = res;
+      if (res) {
+        this.searchData = res;
+        this.isLoading = false;
+      }
     })
   }
 

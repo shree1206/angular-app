@@ -3,10 +3,11 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { IScheduleData, searchBus } from '../../models/model';
 import { SearchBusService } from '../../services/search-bus.service';
 import { DatePipe } from '@angular/common';
+import { LoaderComponent } from '../../shared/loader/loader.component';
 
 @Component({
   selector: 'app-book-ticket',
-  imports: [DatePipe],
+  imports: [DatePipe, LoaderComponent],
   templateUrl: './book-ticket.component.html',
   styleUrl: './book-ticket.component.css'
 })
@@ -18,7 +19,7 @@ export class BookTicketComponent {
   searchObj: searchBus = new searchBus();
   getBusScheduleByID: any;
   scheduleData!: IScheduleData;
-
+  isLoading: boolean = true;
   constructor() {
     this.activatedRoute.params.subscribe((res: any) => {
       this.searchObj.fromLocationID = res.fromID;
@@ -34,7 +35,10 @@ export class BookTicketComponent {
 
   getBusDetails(scheduleID: number) {
     this.searchService.getBusScheduleByID(scheduleID).subscribe((res: IScheduleData) => {
-      this.scheduleData = res;
+      if (res) {
+        this.scheduleData = res;
+        this.isLoading = false;
+      }
     });
   }
 }
