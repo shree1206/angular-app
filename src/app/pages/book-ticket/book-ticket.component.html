@@ -1,1 +1,110 @@
-<p>book-ticket works!</p>
+<div class="container">
+    <a class="navbar-brand back-link" (click)="backClick()">
+        <i class="fa fa-arrow-left"></i> Back
+    </a>
+    <!-- Booking Info Card -->
+    <div class="booking-header">
+        <div class="traveler-info">
+            <h3>John Doe</h3>
+            <div>Wednesday, August 27, 2025<br>10:00 AM</div>
+        </div>
+        <div class="route-info">
+            <h3>Trip</h3>
+            <div class="route-line">Delhi <i class="fa fa-arrow-right"></i> Mumbai</div>
+            <div class="duration">Duration: 8h 30m</div>
+        </div>
+    </div>
+
+    <!-- Seat Selection and Booking Summary -->
+    <div class="bottom-section">
+        <!-- Seat Selection Card -->
+        <div class="card seat-card">
+            <div class="header">
+                <h3>Select Seats</h3>
+                <div class="legend">
+                    <span><i class="fa fa-square" style="color: green;"></i> Available</span>
+                    <span><i class="fa fa-square" style="color: gray;"></i> Booked</span>
+                    <span><i class="fa fa-square" style="color: #007bff;"></i> Selected</span>
+                </div>
+            </div>
+
+            <!-- Seat Grid -->
+            <div class="seat-grid">
+                <div class="seat available">1</div>
+                <div class="seat booked">2</div>
+                <div class="aisle"></div>
+                <div class="seat selected">3</div>
+                <div class="seat available">4</div>
+
+                <div class="seat booked">5</div>
+                <div class="seat available">6</div>
+                <div class="aisle"></div>
+                <div class="seat available">7</div>
+                <div class="seat selected">8</div>
+
+                <div class="seat available">9</div>
+                <div class="seat available">10</div>
+                <div class="aisle"></div>
+                <div class="seat available">11</div>
+                <div class="seat available">12</div>
+
+                <div class="seat available">13</div>
+                <div class="seat available">14</div>
+                <div class="aisle"></div>
+                <div class="seat available">15</div>
+                <div class="seat available">16</div>
+
+                <div class="seat available">17</div>
+                <div class="seat available">18</div>
+                <div class="aisle"></div>
+                <div class="seat available">19</div>
+                <div class="seat available">20</div>
+
+                <div class="seat available">21</div>
+                <div class="seat available">22</div>
+                <div class="aisle"></div>
+                <div class="seat available">23</div>
+                <div class="seat available">24</div>
+
+                <div class="seat available">25</div>
+                <div class="seat available">26</div>
+                <div class="aisle"></div>
+                <div class="seat available">27</div>
+                <div class="seat available">28</div>
+            </div>
+        </div>
+
+        <!-- Booking Summary Card -->
+        <div class="card summary-card">
+            <div class="booking-summary">
+                <h3>Booking Summary</h3>
+
+                <!-- Selected Seats -->
+                <div class="selected-seats">
+                    <div class="selected-seat">Seat - 3</div>
+                    <div class="selected-seat">Seat - 4</div>
+                </div>
+
+                <!-- Fare Details -->
+                <h6>Fare Details</h6>
+                <div class="fare-details">
+                    <div><span>Base Fare</span><span><i class="fa fa-rupee"></i> 3200</span></div>
+                    <div><span>Tax (5%)</span><span><i class="fa fa-rupee"></i> 160</span></div>
+                    <div><strong>Total</strong><strong><i class="fa fa-rupee"></i> 3360</strong></div>
+                </div>
+
+                <!-- Contact Details -->
+                <div class="contact-details">
+                    <h6>Contact Details</h6>
+                    <div class="contact-fields">
+                        <input type="email" placeholder="Email">
+                        <input type="tel" placeholder="Phone Number">
+                    </div>
+                </div>
+
+                <!-- Proceed Button -->
+                <button class="proceed-btn"><i class="fa fa-credit-card"></i> Proceed to Payment</button>
+            </div>
+        </div>
+    </div>
+</div>

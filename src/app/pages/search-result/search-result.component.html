@@ -33,7 +33,8 @@
                 <div class="info-title">Price</div>
                 <div class="info-value">{{item.price}}</div>
             </div>
-            <button class="arrow-button"><i class="fa fa-arrow-right"></i></button>
+            <button type="button" (click)="navigatingToBooking(item.scheduleId)" class="arrow-button"><i
+                    class="fa fa-arrow-right"></i></button>
         </div>
     </div>
     }
