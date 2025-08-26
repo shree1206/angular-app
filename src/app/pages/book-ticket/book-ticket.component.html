@@ -5,8 +5,9 @@
     <!-- Booking Info Card -->
     <div class="booking-header">
         <div class="traveler-info">
-            <h3>John Doe</h3>
-            <div>Wednesday, August 27, 2025<br>10:00 AM</div>
+            <h3>{{scheduleData.busName}}</h3>
+            <div>{{scheduleData.departureTime | date:'dd-MMM-yy'}}-{{scheduleData.arrivalTime | date:'dd-MMM-yy'}}
+            </div>
         </div>
         <div class="route-info">
             <h3>Trip</h3>

@@ -25,3 +25,17 @@ export interface ISearchBus {
     scheduleDate: string
     vendorId: number
 }
+
+export interface IScheduleData {
+    scheduleId: number
+    vendorId: number
+    busName: string
+    busVehicleNo: string
+    fromLocation: number
+    toLocation: number
+    departureTime: string
+    arrivalTime: string
+    scheduleDate: string
+    price: number
+    totalSeats: number
+}

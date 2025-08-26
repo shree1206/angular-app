@@ -13,7 +13,7 @@ export const routes: Routes = [
     },
     { path: "search", component: SearchComponent },
     { path: "search-result/:fromID/:toID/:date", component: SearchResultComponent },
-    { path: "book-ticket/:fromID/:toID/:date", component: BookTicketComponent },
+    { path: "book-ticket/:fromID/:toID/:date/:scheduleID", component: BookTicketComponent },
     { path: "my-booking", component: MyBookingsComponent },
     { path: "**", component: PageNotFoundComponent }
 ];

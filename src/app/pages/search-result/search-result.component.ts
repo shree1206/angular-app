@@ -35,10 +35,10 @@ export class SearchResultComponent {
     })
   }
 
-  navigatingToBooking(scheduleId: number) {
+  navigatingToBooking(scheduleId: any) {
     const encryptedFromId = encodeURIComponent(this.encryptionService.encrypt(this.searchObj.fromLocationID));
     const encryptedToId = encodeURIComponent(this.encryptionService.encrypt(this.searchObj.toLocationID));
     const encryptedDate = encodeURIComponent(this.encryptionService.encrypt(this.searchObj.date));
-    this.route.navigate(['/book-ticket', encryptedFromId, encryptedToId, encryptedDate]);
+    this.route.navigate(['/book-ticket', encryptedFromId, encryptedToId, encryptedDate, scheduleId]);
   }
 }
