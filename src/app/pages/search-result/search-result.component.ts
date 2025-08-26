@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { ISearchBus, searchBus } from '../../models/model';
 import { SearchBusService } from '../../services/search-bus.service';
 import { DatePipe } from '@angular/common';
+import { EncryptionService } from '../../services/encryption.service';
 
 @Component({
   selector: 'app-search-result',
@@ -14,14 +15,15 @@ export class SearchResultComponent {
 
   activatedRoute = inject(ActivatedRoute);
   searchService = inject(SearchBusService)
+  encryptionService = inject(EncryptionService);
   searchObj: searchBus = new searchBus();
   searchData: ISearchBus[] = [];
 
   constructor() {
     this.activatedRoute.params.subscribe((res: any) => {
-      this.searchObj.fromLocationID = res.fromID,
-        this.searchObj.toLocationID = res.toID,
-        this.searchObj.date = res.date
+      this.searchObj.fromLocationID = this.encryptionService.decrypt(decodeURIComponent(res.fromID));
+      this.searchObj.toLocationID = this.encryptionService.decrypt(decodeURIComponent(res.toID));
+      this.searchObj.date = this.encryptionService.decrypt(decodeURIComponent(res.date));
       this.getSearchResult();
     })
   }
