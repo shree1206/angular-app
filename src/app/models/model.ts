@@ -64,4 +64,15 @@ export class SignupRequest {
             this.refreshToken = 'string',
             this.refreshTokenExpiryTime = '2025-05-16T12:50:35.853'
     }
+
+}
+
+export interface loginUser {
+    userName: string
+    password: string
+}
+export interface ILoginResponse {
+    message: string
+    result: boolean
+    data: any
 }
