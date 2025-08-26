@@ -12,7 +12,7 @@ export const routes: Routes = [
         pathMatch: "full"
     },
     { path: "search", component: SearchComponent },
-    { path: "search-result", component: SearchResultComponent },
+    { path: "search-result/:fromID/:toID/:date", component: SearchResultComponent },
     { path: "book-ticket", component: BookTicketComponent },
     { path: "my-booking", component: MyBookingsComponent },
     { path: "**", component: PageNotFoundComponent }

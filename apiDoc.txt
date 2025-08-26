@@ -1,0 +1,11 @@
+Get All Bus Locations
+    https://api.freeprojectapi.com/api/BusBooking/GetBusLocations
+
+Search Bus by from and to location:
+    https://api.freeprojectapi.com/api/BusBooking/searchBus2?fromLocation=251&toLocation=252&travelDate=2025-08-27
+
+Get all vendors details:
+    https://api.freeprojectapi.com/api/BusBooking/GetBusVendors
+
+Post Bus Schedule by vendor
+    https://api.freeprojectapi.com/api/BusBooking/PostBusSchedule

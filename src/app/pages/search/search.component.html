@@ -9,7 +9,7 @@
                     <label for="from" class="form-label">From</label>
                     <div class="input-group">
                         <span class="input-group-text"><i class="fa fa-map-marker"></i></span>
-                        <select class="form-select">
+                        <select class="form-select" name="fromLocationID" [(ngModel)]="searchObj.fromLocationID">
                             <option value="">Select From Location</option>
                             @for( item of locationList; track $index){
                             <option [value]="item.locationId">{{item.locationName}}</option>
@@ -21,7 +21,7 @@
                     <label for="to" class="form-label">To</label>
                     <div class="input-group">
                         <span class="input-group-text"><i class="fa fa-map-marker"></i></span>
-                        <select class="form-select">
+                        <select class="form-select" name="toLocationID" [(ngModel)]="searchObj.toLocationID">
                             <option value="">Select To Location</option>
                             @for( item of locationList; track $index){
                             <option [value]="item.locationId">{{item.locationName}}</option>
@@ -34,11 +34,11 @@
                 <label for="date" class="form-label">Date of Journey</label>
                 <div class="input-group">
                     <span class="input-group-text"><i class="fa fa-calendar"></i></span>
-                    <input type="date" class="form-control" id="date">
+                    <input type="date" class="form-control" id="date" name="date" [(ngModel)]="searchObj.date">
                 </div>
             </div>
             <div class="d-grid">
-                <button type="submit" class="btn btn-primary">
+                <button type="submit" class="btn btn-primary" (click)="searchBus()">
                     <i class="fa fa-search"></i> Search Buses
                 </button>
             </div>
