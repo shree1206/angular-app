@@ -56,3 +56,25 @@ button:disabled {
         font-size: 14px;
     }
 }
+
+.signup-link {
+    text-align: center;
+    /* center the link horizontally */
+    margin-top: 20px;
+    /* spacing from top */
+}
+
+.signup-link a {
+    text-decoration: none;
+    /* remove underline */
+    color: black;
+    /* set text color */
+    font-weight: 500;
+    font-size: 15px;
+    display: inline-block;
+}
+
+.signup-link a:hover {
+    color: #007bff;
+    /* optional: color on hover */
+}

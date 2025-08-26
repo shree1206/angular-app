@@ -34,22 +34,23 @@ export class SignupComponent {
 
       this.authService.addNewUser(this.SignupRequest).subscribe({
         next: (res: any) => {
-          Swal.fire({
-            icon: 'success',
-            title: 'User Registered!',
-            text: 'The user has been successfully created.',
-            confirmButtonColor: '#3085d6'
-          });
+          if (res.data != null) {
+            Swal.fire({
+              icon: 'success',
+              title: 'User Registered!',
+              text: 'The user has been successfully created.',
+              confirmButtonColor: '#3085d6'
+            });
 
-          this.signupForm.reset();
-        },
-        error: (err: any) => {
-          Swal.fire({
-            icon: 'error',
-            title: 'Oops...',
-            text: 'Something went wrong! Please try again later.',
-            confirmButtonColor: '#d33'
-          });
+            this.signupForm.reset();
+          } else {
+            Swal.fire({
+              icon: 'error',
+              title: 'Oops...',
+              text: res.message,
+              confirmButtonColor: '#d33'
+            });
+          }
         }
       });
     }
