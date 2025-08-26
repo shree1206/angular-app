@@ -118,3 +118,16 @@
         margin-top: 10px;
     }
 }
+
+.back-link {
+    display: inline-block;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.back-link i {
+    margin-right: 8px;
+}
