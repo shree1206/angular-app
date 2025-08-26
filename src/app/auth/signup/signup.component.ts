@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
 import { SignupRequest } from '../../models/model';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-signup',
@@ -33,10 +34,22 @@ export class SignupComponent {
 
       this.authService.addNewUser(this.SignupRequest).subscribe({
         next: (res: any) => {
-          console.log('User registered successfully');
+          Swal.fire({
+            icon: 'success',
+            title: 'User Registered!',
+            text: 'The user has been successfully created.',
+            confirmButtonColor: '#3085d6'
+          });
+
+          this.signupForm.reset();
         },
         error: (err: any) => {
-          console.error('Registration error:', err);
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Something went wrong! Please try again later.',
+            confirmButtonColor: '#d33'
+          });
         }
       });
     }
