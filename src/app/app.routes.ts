@@ -4,6 +4,8 @@ import { SearchResultComponent } from './pages/search-result/search-result.compo
 import { BookTicketComponent } from './pages/book-ticket/book-ticket.component';
 import { MyBookingsComponent } from './pages/my-bookings/my-bookings.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
+import { SignupComponent } from './auth/signup/signup.component';
+
 
 export const routes: Routes = [
     {
@@ -15,5 +17,6 @@ export const routes: Routes = [
     { path: "search-result/:fromID/:toID/:date", component: SearchResultComponent },
     { path: "book-ticket/:fromID/:toID/:date/:scheduleID", component: BookTicketComponent },
     { path: "my-booking", component: MyBookingsComponent },
+    { path: "signup", component: SignupComponent },
     { path: "**", component: PageNotFoundComponent }
 ];

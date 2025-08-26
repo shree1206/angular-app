@@ -39,3 +39,29 @@ export interface IScheduleData {
     price: number
     totalSeats: number
 }
+
+export class SignupRequest {
+    userId: number
+    userName: string
+    emailId: string
+    fullName: string
+    role: string
+    createdDate: string
+    password: string
+    projectName: string
+    refreshToken: string
+    refreshTokenExpiryTime: string
+
+    constructor() {
+        this.userId = 0,
+            this.userName = '',
+            this.emailId = '',
+            this.fullName = '',
+            this.role = 'Customer',
+            this.createdDate = '2025-05-16T16:15:31.35',
+            this.password = '',
+            this.projectName = 'BusBooking',
+            this.refreshToken = 'string',
+            this.refreshTokenExpiryTime = '2025-05-16T12:50:35.853'
+    }
+}
