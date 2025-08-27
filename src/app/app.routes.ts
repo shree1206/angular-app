@@ -1,12 +1,4 @@
 import { Routes } from '@angular/router';
-import { SearchComponent } from './pages/search/search.component';
-import { SearchResultComponent } from './pages/search-result/search-result.component';
-import { BookTicketComponent } from './pages/book-ticket/book-ticket.component';
-import { MyBookingsComponent } from './pages/my-bookings/my-bookings.component';
-import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
-import { SignupComponent } from './auth/signup/signup.component';
-import { LoginComponent } from './auth/login/login.component';
-
 
 export const routes: Routes = [
     {
@@ -14,11 +6,32 @@ export const routes: Routes = [
         redirectTo: "search",
         pathMatch: "full"
     },
-    { path: "search", component: SearchComponent },
-    { path: "search-result/:fromID/:toID/:date", component: SearchResultComponent },
-    { path: "book-ticket/:fromID/:toID/:date/:scheduleID", component: BookTicketComponent },
-    { path: "my-booking", component: MyBookingsComponent },
-    { path: "signup", component: SignupComponent },
-    { path: "login", component: LoginComponent },
-    { path: "**", component: PageNotFoundComponent }
+    {
+        path: 'search',
+        loadComponent: () => import('./pages/search/search.component').then(m => m.SearchComponent)
+    },
+    {
+        path: 'search-result/:fromID/:toID/:date',
+        loadComponent: () => import('./pages/search-result/search-result.component').then(m => m.SearchResultComponent)
+    },
+    {
+        path: 'book-ticket/:fromID/:toID/:date/:scheduleID',
+        loadComponent: () => import('./pages/book-ticket/book-ticket.component').then(m => m.BookTicketComponent)
+    },
+    {
+        path: 'my-booking',
+        loadComponent: () => import('./pages/my-bookings/my-bookings.component').then(m => m.MyBookingsComponent)
+    },
+    {
+        path: 'signup',
+        loadComponent: () => import('./auth/signup/signup.component').then(m => m.SignupComponent)
+    },
+    {
+        path: 'login',
+        loadComponent: () => import('./auth/login/login.component').then(m => m.LoginComponent)
+    },
+    {
+        path: "**",
+        loadComponent: () => import('./pages/page-not-found/page-not-found.component').then(m => m.PageNotFoundComponent)
+    }
 ];
